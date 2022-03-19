@@ -6,7 +6,7 @@ var score = 0
 var pipes_array = []
 onready var pipes = preload("res://addons/flappy_godot/res/pipes.tscn")
 onready var godot_bird = $godot_bird
-onready var score_label = $"../../Label"
+onready var score_label = $"../../../Label"
 onready var _timer = $add_pipes
 
 func _ready() -> void:
@@ -35,7 +35,6 @@ func _reset():
 func _on_add_pipes_timeout() -> void:
 	var pipes_instance = pipes.instance()
 	pipes_array.push_back(pipes_instance)
-	print(pipes_array)
 	pipes_instance.position.x = 600
 	pipes_instance.position.y = rand_range(-150,150)
 	add_child(pipes_instance)
